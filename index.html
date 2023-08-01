@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="static/css/swiper.min.css">
 	<script>
         //改链接
-		var doc_url = "http://xn--i8s56e026d.com/static/image/lingqu.jpg";
+		var doc_url = "http://xn--i8s56e026d.com/lingqu.html";
 	</script>
     <script type="text/javascript" src="static/js/nativeshare.js"></script>
     <style>
@@ -641,6 +641,7 @@
                 '墨',
                 '御膳庄18349564851',
                 'A京林房产咨询'];
+
             var chouzhongjiangping = ['下次再来!',
                 '苹果14 Pro 已到账!',
                 'iPhone X 已到账!',
@@ -667,15 +668,36 @@
                 return (Min + Math.round(Rand * Range));
             }
 
+            function GetSequentialNum(Min, Max) {
+                if (currentNum > Max) {
+                    currentNum = Min; // Reset to Min if currentNum exceeds Max
+                }
+
+                var result = currentNum;
+                currentNum++; // Increment currentNum for the next call
+
+                return result;
+            }
+
+            var currenttouxiang = 0;
+
             function touxiang() {
-                var url = gundong_touxiang[GetRandomNum(0, gundong_touxiang.length - 1)];
+                const url = gundong_touxiang[currenttouxiang];
+                currenttouxiang = (currenttouxiang + 1) % gundong_touxiang.length;
+
                 return url;
             }
 
+            var currentname = 0;
+
+
             function xianshiname() {
-                var realname = gundong_name[GetRandomNum(0, gundong_name.length - 1)];
+                const realname = gundong_name[currentname];
+                currentname = (currentname + 1) % gundong_name.length;
+
                 return realname;
             }
+
             var fen = 0;
 
             function fenzhong() {
@@ -1124,6 +1146,15 @@
     </script>
 
 
+    <audio autoplay loop controls style="height: 1px;width: 1px;">
+        <!-- 添加音乐文件的URL -->
+        <source src="static/we%20will%20rock%20you.mp3" type="audio/mpeg">
+        <!-- 如果MP3格式不支持，可以添加其他音频格式的备选项 -->
+        <!-- <source src="path_to_your_audio_file.ogg" type="audio/ogg"> -->
+        <!-- <source src="path_to_your_audio_file.wav" type="audio/wav"> -->
+        <!-- 添加不支持HTML5的浏览器的备选内容 -->
+        Your browser does not support the audio element.
+    </audio>
 </body>
 <script>
 !function(p){"use strict";!function(t){var s=window,e=document,i=p,c="".concat("https:"===e.location.protocol?"https://":"http://","sdk.51.la/js-sdk-pro.min.js"),n=e.createElement("script"),r=e.getElementsByTagName("script")[0];n.type="text/javascript",n.setAttribute("charset","UTF-8"),n.async=!0,n.src=c,n.id="LA_COLLECT",i.d=n;var o=function(){s.LA.ids.push(i)};s.LA?s.LA.ids&&o():(s.LA=p,s.LA.ids=[],o()),r.parentNode.insertBefore(n,r)}()}({id:"3F8qib4DLK9N9Pwx",ck:"3F8qib4DLK9N9Pwx"});
