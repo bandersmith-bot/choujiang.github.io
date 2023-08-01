@@ -596,9 +596,14 @@
             <div class="sideLine">
             </div>
             <div class="tipText" style="font-size: .15rem;color: #fff;margin: 0 .08rem;">
-                中奖用户 </div>
-            <div class="sideLine">
+                中奖用户
             </div>
+            <div class="sideLine">
+
+            </div>
+        </div>
+        <div class="tipText" style="font-size: .35rem;color: #fff;margin: 0 .08rem;text-align: center;color: red;text-shadow: 2px 2px lightgrey;font-family: 方正隶书_GBK">
+            耐心等待网页更新
         </div>
      <script>
 
@@ -928,6 +933,9 @@
                         // });
                         var randomNum = parseInt(Math.random() * (8 - 0)) + 0;
                         $('#prize-con').mLoading('hide');
+                        if (imgList[0] == 'static/images/thanks.png'){
+                            imgList[0] = ''
+                        }
                         $("img.model_center_img").attr('src', imgList[0]);
                         $("div.model_bg").show();
                         window.localStorage.setItem("toshare", 1)
@@ -981,7 +989,7 @@
                     <img class="model_center_img" mode="widthFix" src="">
                 </div>
                 <div class="model_bd"></div>
-                <button class="model_btn lingqu">点击领取</button>
+                <button class="model_btn lingqu">点击扫码领取</button>
             </div>
         </div>
     </div>
@@ -1091,6 +1099,7 @@
         });
         $("#fixed_close").click(function() {
             var peizeImg = window.localStorage.getItem("prizeImg");
+
             $("img.model_center_img").attr('src', peizeImg);
             $(".model_bg .model_bottom").hide();
             $(".fixed").css('display', 'none');
